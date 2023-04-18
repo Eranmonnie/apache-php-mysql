@@ -23,13 +23,9 @@
 
    
    <ul>
-    <?php 
-     foreach ($books as $book) {
-         echo "<li>{$book}tm</li>";
-    }   or
-    ?>
+
     <?php foreach ($books as $book) : ?>
-    <li>$book</li>
+    <li> <?= $book ?> </li>
 
     <?php endforeach; ?>
    </ul>
