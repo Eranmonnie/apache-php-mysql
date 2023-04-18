@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        body{
-            display: grid;
-            place-items:center;
-            height: 100vh;
+        body{  
             margin: 0;
             font-family: sans-serif;
         }
@@ -15,21 +12,27 @@
 </head>
 <body>
 
+<h1>Recomended books</h1>
     <?php 
-    $name = 'dark matter';
-    $read = false;
-    $message = 'you have not read dark matter';
-
-    if($read){
-        $message = 'you have read dark matter';
-
-    }
+        $books = [
+            "Do androide dream of electric sheep",
+            "Hail mary",
+            "the langlioids"
+        ]
     ?>
 
    
-    <h1><?php echo $message; ?> 
-<?= $message ?> </h1>
-   
+   <ul>
+    <?php 
+     foreach ($books as $book) {
+         echo "<li>{$book}tm</li>";
+    }   or
+    ?>
+    <?php foreach ($books as $book) : ?>
+    <li>$book</li>
+
+    <?php endforeach; ?>
+   </ul>
   
 </body>
 </html>
