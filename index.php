@@ -43,7 +43,7 @@
             
         ];
 
-        
+        //you can use phps array_filter fuunction it also worka like the filter function we created
        function filter  ($items, $function){
 
             $filteredItems = [];
@@ -57,7 +57,7 @@
             return $filteredItems; 
 
             }
-            //you can use phps array_filter fuunction it also worka like the filter function we created
+            
 
         $result = filter($books, function($item){
             return $item['name'] === 'charlie simson';
