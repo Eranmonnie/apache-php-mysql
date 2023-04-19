@@ -15,20 +15,59 @@
 <h1>Recomended books</h1>
     <?php 
         $books = [
-            "Do androide dream of electric sheep",
-            "Hail mary",
-            "the langlioids"
-        ]
+       
+         [
+
+           "name"  => "Do androide dream of electric sheep",
+           "author" => "hope vandine",
+           "relese year" => "2004",
+           "url" => "http//:example.com"
+            
+        ],
+
+        [
+           
+            "name" => "Hail mary",
+            "author" => "thomas cruch",
+            "relese year" => "2009",
+            "url" => "http//:example.com"
+        ],
+
+        [
+           
+            "name" => "charlie simson",
+            "author" => "andie strongheart",
+            "relese year" => "20011",
+            "url" => "http//:example.com"
+        ],
+            
+        ];
+
+        
+        function filterByAuthor($book){
+            if($book['name'] === "charlie simson"){
+                return true;
+            } 
+
+            else{
+                return false;
+            }
+                
+        }
     ?>
-
-   
-   <ul>
-
-    <?php foreach ($books as $book) : ?>
-    <li> <?= $book ?> </li>
+  
+    <?php foreach($books as $book) :?>
+        
+        <?php if(filterByAuthor($book)) : ?>
+            <a href="#">
+                <li><?= $book['name'] ?></li>
+                <li><?= $book['author'] ?></li>
+            </a>
+        <?php endif; ?>
 
     <?php endforeach; ?>
-   </ul>
+
+
   
 </body>
 </html>
