@@ -44,12 +44,12 @@
         ];
 
         
-       $filter =  function ($items, $key, $value){
+       function filter  ($items, $function){
 
             $filteredItems = [];
 
             foreach ($items as $item){   
-                if($item[$key] === $value){
+                if($function($item)){
                     
                     $filteredItems[] = $item;    
                 }                
@@ -57,9 +57,14 @@
             return $filteredItems; 
 
             }
+            //you can use phps array_filter fuunction it also worka like the filter function we created
+
+        $result = filter($books, function($item){
+            return $item['name'] === 'charlie simson';
+        });
     ?>
   
-    <?php foreach($filter($books, "name", "charlie simson") as $book) :?>
+    <?php foreach($result as $book) :?>
         
             <a href="#">
                 <li><?= $book["name"] ?></li>
