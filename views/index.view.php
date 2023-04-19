@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        body{  
-            margin: 0;
-            font-family: sans-serif;
-        }
-    </style>
-</head>
-<body>
+<?php require "partial/navbar.view.php" ?>
 
 <h1>Recomended books</h1>
   
