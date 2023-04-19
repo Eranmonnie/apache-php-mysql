@@ -44,27 +44,28 @@
         ];
 
         
-        function filterByAuthor($book){
-            if($book['name'] === "charlie simson"){
-                return true;
-            } 
+        function filterByAuthor($books, $author){
 
-            else{
-                return false;
+            $filteredBooks = [];
+
+            foreach ($books as $book){   
+                if($book["name"] === $author){
+                    
+                    $filteredBooks[] = $book;    
+                }                
             }
-                
-        }
+            return $filteredBooks; 
+
+            }
     ?>
   
-    <?php foreach($books as $book) :?>
+    <?php foreach(filterByAuthor($books, "charlie simson") as $book) :?>
         
-        <?php if(filterByAuthor($book)) : ?>
             <a href="#">
-                <li><?= $book['name'] ?></li>
-                <li><?= $book['author'] ?></li>
+                <li><?= $book["name"] ?></li>
+                <li><?= $book["author"] ?></li>
             </a>
-        <?php endif; ?>
-
+        
     <?php endforeach; ?>
 
 
