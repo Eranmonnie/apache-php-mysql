@@ -1,4 +1,5 @@
 <?php 
+$heading= "Homepage";
 $books = [
 
     [

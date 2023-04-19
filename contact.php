@@ -1,5 +1,6 @@
 <?php
 
+$heading= "Contactpage";
 
 
 
