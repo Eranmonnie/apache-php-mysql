@@ -44,22 +44,22 @@
         ];
 
         
-        function filterByAuthor($books, $author){
+       $filter =  function ($items, $key, $value){
 
-            $filteredBooks = [];
+            $filteredItems = [];
 
-            foreach ($books as $book){   
-                if($book["name"] === $author){
+            foreach ($items as $item){   
+                if($item[$key] === $value){
                     
-                    $filteredBooks[] = $book;    
+                    $filteredItems[] = $item;    
                 }                
             }
-            return $filteredBooks; 
+            return $filteredItems; 
 
             }
     ?>
   
-    <?php foreach(filterByAuthor($books, "charlie simson") as $book) :?>
+    <?php foreach($filter($books, "name", "charlie simson") as $book) :?>
         
             <a href="#">
                 <li><?= $book["name"] ?></li>
