@@ -2,6 +2,8 @@
 
 $uri = $_SERVER["REQUEST_URI"];
 
+$uri = parse_url($uri)["path"];
+
 if ($uri ==="/") {
     require "controllers/index.php";
 }
