@@ -2,14 +2,27 @@
 require "router.php";
 
 //connect to our db
-$password = "eranmonnie";
-$username = "root";
-$dsn= 'mysql:host=localhost;port=3306;charset=utf8mb4;dbname=phpdb;';
+//database class
+class Database{
 
-$pdo = new PDO($dsn, $username, $password);
+   public $connection;
 
-$statement = $pdo->prepare("select * from blogs");
-$statement->execute();
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+    public function __construct(){
+        $password = "eranmonnie";
+        $username = "root";
+        $dsn= 'mysql:host=localhost;port=3306;charset=utf8mb4;dbname=phpdb;';
+        $this->connection = new PDO($dsn, $username, $password);
+    }
+    public function query($query){
+        
+        $statement = $this->connection->prepare($query);
+        $statement->execute();
+        return $statement;
+    }
+}
+
+
+$db = new Database();
+$posts = $db->query("select * from blogs")->fetch(PDO::FETCH_ASSOC);
 var_dump($posts);
 
