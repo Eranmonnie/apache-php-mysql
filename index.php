@@ -5,7 +5,7 @@ require 'Database.php';
 
 $config = require("config.php");
 
-$db = new Database($config);
-$posts = $db->query("select * from blogs")->fetch(PDO::FETCH_ASSOC);
+$db = new Database($config['database']);
+$posts = $db->query("select * from blogs")->fetch();
 var_dump($posts);
 
