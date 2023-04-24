@@ -1,1 +1,1 @@
-# server side management with php 
+# simple notes app with php
