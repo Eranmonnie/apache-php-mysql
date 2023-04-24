@@ -1,6 +1,6 @@
 <?php require "partial/navbar.view.php" ?>
 
-    <h1>about us</h1>
+    <h1>notes</h1>
    
 </body>
 </html>
