@@ -1,1 +1,1 @@
-# simple notes app with php
+# Simple notes app with php that implements CRUD
